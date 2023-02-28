@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect All Requests To The Subfolder
+    RewriteRule ^ /sisdm/public
+
+	SetEnv CI_ENV development
+	#SetEnv CI_ENV production
+</IfModule>
