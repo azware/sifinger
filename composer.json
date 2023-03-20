@@ -9,8 +9,16 @@
         "ext-intl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-soap": "*",
+        "ext-sockets": "*",
+        "guzzlehttp/guzzle": "^7.5",
         "laminas/laminas-escaper": "^2.9",
-        "psr/log": "^1.1"
+        "monolog/monolog": "^2.9",
+        "phpoption/phpoption": "^1.9",
+        "psr/http-message": "^1.0",
+        "psr/log": "^1.1",
+        "ralouphie/getallheaders": "^3.0",
+        "vlucas/phpdotenv": "^5.5"
     },
     "require-dev": {
         "kint-php/kint": "^5.0.3",
@@ -49,8 +57,14 @@
     },
     "autoload": {
         "psr-4": {
-            "CodeIgniter\\": "system/"
+          "TADPHP\\": "soap/lib/",
+          "TADPHP\\Exceptions\\": "soap/lib/Exceptions/",
+          "TADPHP\\Providers\\": "soap/lib/Providers/",
+          "Test\\Helpers\\": "test/helpers/",
+          "ZKLIB\\":"soap/lib/zklib/",
+          "CodeIgniter\\": "system/"
         },
+        "files":["soap/zklib/zklib.php"],
         "exclude-from-classmap": [
             "**/Database/Migrations/**"
         ]
