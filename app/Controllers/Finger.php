@@ -22,7 +22,7 @@ class Finger extends BaseController
     echo view('finger_device', $data);
     }
 
-    public function viewFingerDevice($id)
+    public function get_mesin($id)
     {
         $device = new FingerDeviceModel();
         $data['devices'] = $device->where([

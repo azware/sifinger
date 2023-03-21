@@ -13,6 +13,6 @@ class Home extends BaseController
 
         $data['devices'] = $device->findAll();
 
-        return view('template', $data);
+        return view('coba_mesin', $data);
     }
 }
