@@ -45,4 +45,14 @@ class Finger extends BaseController
         $data['id'] = $id;
         echo view('finger_device', $data);
     }
+
+
+    public function get_log()
+    {
+        $device = new FingerDeviceModel();
+
+        $data['devices'] = $device->findAll();
+
+        return view('coba_mesin', $data);
+    }
 }

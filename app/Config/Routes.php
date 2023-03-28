@@ -30,7 +30,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/(:any)', 'Finger::get_mesin/$1');
+$routes->get('finger/(:any)', 'Finger::get_mesin/$1');
+$routes->post('finger/get_log', 'Finger::get_log');
 
 /*
  * --------------------------------------------------------------------

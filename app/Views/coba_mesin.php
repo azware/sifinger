@@ -193,7 +193,7 @@ use TADPHP\TADFactory;
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#editModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download Excel</a>";
+                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download Excel</a>";
 
                             ?>
                         </td>
@@ -210,38 +210,55 @@ use TADPHP\TADFactory;
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
 
-      <div class="modal fade" id="editModal">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Detail Mesin</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <form method="POST" action="">
+        <div class="modal fade" id="downloadModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Download Excel Log Mesin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <tbody>
+                    <tr> 
+                      <th>IP Address</th> 
+                      <td><input type="text" class="form-control device_ip" name="device_ip" placeholder="Device IP" disabled></td> 
+                    </tr>
+                    <tr> 
+                      <th>Device Name</th> 
+                      <td><input type="text" class="form-control device_name" name="device_name" placeholder="Device Name" disabled></td> 
+                    </tr>
+                    <tr>
+                      <th>Range Tanggal</th> 
+                      <td>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                <i class="far fa-calendar-alt"></i>
+                              </span>
+                            </div>
+                            <input type="text" class="form-control float-right" id="reservation">
+                          </div>
+                          <!-- /.input group -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type='submit' name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Download</button>
+              </div>
             </div>
-            <div class="modal-body card-body table-responsive p-0">
-              <table class="table table-bordered table-hover text-nowrap">
-                <tbody>
-                  <tr> 
-                    <th>IP Address</th> 
-                    <td><input type="text" class="form-control device_ip" name="device_ip" placeholder="Device IP" disabled></td> 
-                  </tr>
-                  <tr> 
-                    <th>Device Name</th> 
-                    <td><input type="text" class="form-control device_name" name="device_name" placeholder="Device Name" disabled></td> 
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            <!-- /.modal-content -->
           </div>
-          <!-- /.modal-content -->
+          <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
+        <!-- /.modal -->
+      </form>
 
     </section>
     <!-- /.content -->
@@ -270,7 +287,6 @@ use TADPHP\TADFactory;
   <script src="adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
-    $.widget.bridge('uibutton', $.ui.button)
     $(document).ready(function(){
  
         // get Edit Product
@@ -282,7 +298,7 @@ use TADPHP\TADFactory;
             $('.device_ip').val(ip);
             $('.device_name').val(name);
             // Call Modal Edit
-            $('#editModal').modal('show');
+            $('#downloadModal').modal('show');
         });
  
         // get Delete Product
@@ -294,7 +310,35 @@ use TADPHP\TADFactory;
             // Call Modal Edit
             $('#deleteModal').modal('show');
         });
-         
+
+        //Date range picker
+        $('#reservation').daterangepicker()
+        
+        $("form").validate();
+
+        $('#submit').click(function() {
+          var dataString = $(this).serialize();
+          
+          // alert(dataString); return false; 
+          $.ajax({
+            type: "POST",
+            url: "finger/get_log",
+            data: dataString,
+            success: function () {
+              $("#downloadForm").html("<div id='message'></div>");
+              $("#message")
+                .html("<h2>Download Success!</h2>")
+                .append("<p>Log mesin berhasil di download dalam bentuk Excel.</p>")
+                .hide()
+                .fadeIn(1500, function () {
+                  $("#message").append(
+                    "<span class='badge badge-success'><i class='fa fa-circle-check'></i></a>"
+                  );
+                });
+            }
+          });
+          e.preventDefault();
+        });
     });
   </script>
   <!-- Bootstrap 4 -->
