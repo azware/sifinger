@@ -98,7 +98,7 @@ use TADPHP\TADFactory;
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-fingerprint"></i>
               <p>
                 Mesin Finger
               </p>
@@ -141,7 +141,7 @@ use TADPHP\TADFactory;
             <!-- MAIN -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><i class="fas fa-chart-pie mr-1"></i>&nbsp; Daftar Mesin</h3>
+                <h3 class="card-title"><i class="fas fa-fingerprint mr-1"></i>&nbsp; Daftar Mesin</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -165,6 +165,7 @@ use TADPHP\TADFactory;
                       <th>Device Name</th>
                       <th>SN</th>
                       <th>Status Mesin</th>
+                      <th>Download Log</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -175,14 +176,26 @@ use TADPHP\TADFactory;
                         <td><?= $device['device_name'] ?></td>
                         <td><?= $device['sn'] ?></td>
                         <td><?php 
-
                             $tad = (new TADFactory((['ip'=> $device['ip_address'], 'com_key'=>0])))->get_instance();
 
                             if (!EMPTY($tad)) {
-                              echo "<h5><a class='badge badge-success' href='#'><i class='fa fa-circle-check'></i>&nbsp; Connected</a></h5>";
+                              echo "<a class='btn btn-xs btn-success' href='#'><i class='fa fa-circle-check'></i>&nbsp; Connected</a>";
                             } else {
-                              echo "<h5><a class='badge badge-info' href='#'><i class='fa fa-circle-xmark'></i>&nbsp; Disconnected</a></h5>";
+                              echo "<a class='btn btn-xs btn-info disabled' href='#'><i class='fa fa-circle-xmark'></i>&nbsp; Disconnected</a>";
                             } ?>
+                        </td>
+                        <td><?php 
+                            if (!EMPTY($tad)) {
+                              $down_class = "bg-primary"; $href = "#";
+                            } else {
+                              $down_class = "bg-info disabled"; $href = "#";
+                            }
+                            $dev_ip = $device['ip_address'];
+                            $dev_nm = $device['device_name'];
+
+                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#editModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download Excel</a>";
+
+                            ?>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -210,20 +223,12 @@ use TADPHP\TADFactory;
               <table class="table table-bordered table-hover text-nowrap">
                 <tbody>
                   <tr> 
-                    <th>ID</th> 
-                    <td><input type="text" class="form-control device_id" name="device_id" placeholder="Device ID" disabled></td> 
-                  </tr>
-                  <tr> 
                     <th>IP Address</th> 
                     <td><input type="text" class="form-control device_ip" name="device_ip" placeholder="Device IP" disabled></td> 
                   </tr>
                   <tr> 
                     <th>Device Name</th> 
                     <td><input type="text" class="form-control device_name" name="device_name" placeholder="Device Name" disabled></td> 
-                  </tr>
-                  <tr> 
-                    <th>SN</th> 
-                    <td><input type="text" class="form-control device_sn" name="device_sn" placeholder="Device SN" disabled></td> 
                   </tr>
                 </tbody>
               </table>
@@ -271,16 +276,11 @@ use TADPHP\TADFactory;
         // get Edit Product
         $('.btn-edit').on('click',function(){
             // get data from button edit
-            const id = $(this).data('id');
             const ip = $(this).data('ip');
             const name = $(this).data('name');
-            const sn = $(this).data('sn');
             // Set data to Form Edit
-            $('.device_id').val(id);
             $('.device_ip').val(ip);
             $('.device_name').val(name);
-            $('.device_sn').val(sn);
-            //$('.device_sn').val(category).trigger('change');
             // Call Modal Edit
             $('#editModal').modal('show');
         });
