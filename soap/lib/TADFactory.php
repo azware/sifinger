@@ -57,7 +57,7 @@ class TADFactory
 
         $soap_options = [
             'location' => "http://{$options['ip']}/iWsService",
-            'uri' => 'http://www.zksoftware/Service/message/',
+            'uri' => '#',
             'connection_timeout' => $options['connection_timeout'],
             'exceptions' => false,
             'trace' => true

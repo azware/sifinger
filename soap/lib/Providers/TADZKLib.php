@@ -519,10 +519,16 @@ class TADZKLib
         $u = unpack('S', $this->createChkSum($buf));
 
         if (is_array($u)) {
-            while (list($key) = each($u)) {
+            foreach (array_keys($u) as $key) { // FOR PHP 8
                 $u = $u[$key];
                 break;
             }
+            /** 
+            while (list($key) = each($u)) { // ASLI BAWAAN
+                $u = $u[$key];
+                break;
+            }
+            */
         }
 
         $chksum = $u;

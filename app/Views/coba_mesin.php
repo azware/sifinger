@@ -1,3 +1,9 @@
+<?php
+
+use TADPHP\TAD;
+use TADPHP\TADFactory;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +17,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="adminlte/plugins/fontawesome-free-6.4.0-web/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -168,9 +174,15 @@
                         <td><?= $device['ip_address'] ?></td>
                         <td><?= $device['device_name'] ?></td>
                         <td><?= $device['sn'] ?></td>
-                        <td>
-                          <a class="btn btn-info btn-sm" data-toggle="modal" href="<?= site_url('Finger/get_mesin/'.$device['devid_auto'])?>" data-target="#myModal" data-original-title="Detail"> 
-                          <i class="fa fa-search"></i>&nbsp; Detail</a>
+                        <td><?php 
+
+                            $tad = (new TADFactory((['ip'=> $device['ip_address'], 'com_key'=>0])))->get_instance();
+
+                            if (!EMPTY($tad)) {
+                              echo "<h5><a class='badge badge-success' href='#'><i class='fa fa-circle-check'></i>&nbsp; Connected</a></h5>";
+                            } else {
+                              echo "<h5><a class='badge badge-info' href='#'><i class='fa fa-circle-xmark'></i>&nbsp; Disconnected</a></h5>";
+                            } ?>
                         </td>
                       </tr>
                     <?php endforeach ?>
