@@ -1,0 +1,1 @@
+<?php echo $this->data_uri($this->config->item('upload_p2m_hibah') . 'png.png', mime_content_type($this->config->item('upload_p2m_hibah') . 'png.png')); ?>
