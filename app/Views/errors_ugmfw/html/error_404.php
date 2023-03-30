@@ -1,0 +1,1 @@
+<?php header("Location: http://" . $_SERVER['HTTP_HOST'] . str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']) . 'ugmfw-error/notfound.php'); ?>

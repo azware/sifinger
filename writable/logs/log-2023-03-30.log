@@ -1,0 +1,55 @@
+INFO - 2023-03-30 00:45:45 --> CSRF token verified.
+CRITICAL - 2023-03-30 00:45:50 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 306.
+ 1 SYSTEMPATH\Security\Security.php(306): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\Filters\Filters->run('finger/get_log', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 00:54:27 --> Undefined variable $csrf_token
+in APPPATH\Views\coba_mesin.php on line 305.
+ 1 APPPATH\Views\coba_mesin.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $csrf_token', 'APPPATH\\Views\\coba_mesin.php', 305)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\coba_mesin.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('coba_mesin', [], true)
+ 5 APPPATH\Controllers\Home.php(16): view('coba_mesin', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 00:56:27 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 306.
+ 1 SYSTEMPATH\Security\Security.php(306): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\Filters\Filters->run('finger/get_log', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 00:57:38 --> The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 306.
+ 1 SYSTEMPATH\Security\Security.php(306): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(55): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\Filters\Filters->run('finger/get_log', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 00:58:16 --> CSRF token verified.
+INFO - 2023-03-30 00:59:09 --> CSRF token verified.
+INFO - 2023-03-30 01:29:29 --> CSRF token verified.
+INFO - 2023-03-30 01:33:17 --> CSRF token verified.
+INFO - 2023-03-30 01:34:16 --> CSRF token verified.
+INFO - 2023-03-30 01:34:58 --> CSRF token verified.
+INFO - 2023-03-30 01:35:40 --> CSRF token verified.
+INFO - 2023-03-30 01:36:33 --> CSRF token verified.
+INFO - 2023-03-30 01:37:02 --> CSRF token verified.
+INFO - 2023-03-30 01:43:02 --> CSRF token verified.
+INFO - 2023-03-30 01:49:42 --> CSRF token verified.
+INFO - 2023-03-30 01:52:02 --> CSRF token verified.
+INFO - 2023-03-30 01:52:18 --> CSRF token verified.
+INFO - 2023-03-30 02:02:06 --> CSRF token verified.
+INFO - 2023-03-30 02:10:49 --> CSRF token verified.
+INFO - 2023-03-30 02:11:02 --> CSRF token verified.
+INFO - 2023-03-30 02:11:26 --> CSRF token verified.
+INFO - 2023-03-30 02:11:54 --> CSRF token verified.
+INFO - 2023-03-30 02:12:50 --> CSRF token verified.
