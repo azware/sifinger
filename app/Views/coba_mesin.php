@@ -3,6 +3,9 @@
 use TADPHP\TAD;
 use TADPHP\TADFactory;
 
+$csrf_token = csrf_token();
+$csrf_hash = csrf_hash();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +38,8 @@ use TADPHP\TADFactory;
     <!-- summernote -->
     <link rel="stylesheet" href="adminlte/plugins/summernote/summernote-bs4.min.css">
   <!-- ADMIN LTE 3 -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -210,10 +215,11 @@ use TADPHP\TADFactory;
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
 
-      <form method="POST" action="">
+      <form method="POST" enctype="multipart/form-data" id="downloadform">
+        <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
         <div class="modal fade" id="downloadModal">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" id="messageModal">
               <div class="modal-header">
                 <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Download Excel Log Mesin</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -240,7 +246,7 @@ use TADPHP\TADFactory;
                                 <i class="far fa-calendar-alt"></i>
                               </span>
                             </div>
-                            <input type="text" class="form-control float-right" id="reservation">
+                            <input type="text" class="form-control float-right" id="datelog" name="datelog">
                           </div>
                           <!-- /.input group -->
                       </td>
@@ -250,8 +256,9 @@ use TADPHP\TADFactory;
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type='submit' name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Download</button>
+                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Download</button>
               </div>
+              <span id="output"></span>
             </div>
             <!-- /.modal-content -->
           </div>
@@ -259,7 +266,7 @@ use TADPHP\TADFactory;
         </div>
         <!-- /.modal -->
       </form>
-
+      
     </section>
     <!-- /.content -->
   </div>
@@ -279,7 +286,58 @@ use TADPHP\TADFactory;
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script>
+  $(document).ready(function(){  
+      $("#submit").click(function (event) {
+            //stop submit the form, we will post it manually.
+            event.preventDefault();
+       
+            var form = $('#downloadform')[0]; // Get form            
+            var data = new FormData(form); // FormData object
+     
+            // If you want to add an extra field for the FormData
+            data.append("CustomField", "This is some extra data, testing");
+            
+            // disabled the submit button
+            $("#submit").prop("disabled", true);
 
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "<?= base_url()?>finger/get_log",
+                data : data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 800000,
+                success: function (data) {
+                    //$("#output").text("SUCCESS : " + data);
+                    //console.log("SUCCESS : ", data);
+                    $("#submit").prop("disabled", false);
+                    $("#messageModal").html("<div id='message'></div>");
+                    $("#message")
+                      .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
+                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
+                      .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                      .hide()
+                      .fadeIn(4000, function () {
+                        $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Berhasil Download Log Presensi dari Mesin dalam bentuk Excel <br> Silahkan tunggu file hasil download log, kemudian Refresh halaman untuk download log lagi!</div>");
+                      });
+                },
+                error: function (e) {
+                    //$("#output").text("ERROR : " + e.responseText);
+                    //console.log("ERROR : ", e);
+                    $("#submit").prop("disabled", false);
+                    $("#messageModal").html("<div id='message'></div>");
+                    $("#message")
+                      .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
+                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e+" </div></div>")
+                      .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                }
+            });
+        });
+  });
+</script>
 <!-- ADMIN LTE 3 -->
   <!-- jQuery -->
   <script src="adminlte/plugins/jquery/jquery.min.js"></script>
@@ -312,20 +370,19 @@ use TADPHP\TADFactory;
         });
 
         //Date range picker
-        $('#reservation').daterangepicker()
-        
+        $('#datelog').daterangepicker()
+
         $("form").validate();
 
         $('#submit').click(function() {
           var dataString = $(this).serialize();
-          
-          // alert(dataString); return false; 
+                    
           $.ajax({
             type: "POST",
-            url: "finger/get_log",
+            url: base_url+"finger/get_log",
             data: dataString,
             success: function () {
-              $("#downloadForm").html("<div id='message'></div>");
+              $("#downloadform").html("<div id='message'></div>");
               $("#message")
                 .html("<h2>Download Success!</h2>")
                 .append("<p>Log mesin berhasil di download dalam bentuk Excel.</p>")
@@ -339,6 +396,7 @@ use TADPHP\TADFactory;
           });
           e.preventDefault();
         });
+
     });
   </script>
   <!-- Bootstrap 4 -->

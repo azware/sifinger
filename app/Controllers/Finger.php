@@ -48,11 +48,25 @@ class Finger extends BaseController
 
 
     public function get_log()
-    {
+    {   
+        $data['csrf_token'] = csrf_token();
+        $data['csrf_hash'] = csrf_hash();
+        $datelog = $_POST['datelog'];
         $device = new FingerDeviceModel();
 
         $data['devices'] = $device->findAll();
 
-        return view('coba_mesin', $data);
+        $datelog_exp = explode(' - ', $datelog);
+        $date_awal_str = $datelog_exp[0];
+        $date_akhir_str = $datelog_exp[1];
+
+        $date_awal = strtotime($date_awal_str);
+        $date_akhir = strtotime($date_akhir_str);
+
+        $date_awal_ready = date('Y-m-d',$date_awal);
+        $date_akhir_ready = date('Y-m-d',$date_awal);
+
+        echo $date_awal_ready." Sampai ".$date_akhir_ready;
+        echo json_encode($data);
     }
 }
