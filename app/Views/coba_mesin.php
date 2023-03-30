@@ -198,7 +198,7 @@ $csrf_hash = csrf_hash();
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download Excel</a>";
+                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
 
                             ?>
                         </td>
@@ -221,7 +221,7 @@ $csrf_hash = csrf_hash();
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="messageModal">
               <div class="modal-header">
-                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Download Excel Log Mesin</h4>
+                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Download Log Mesin Presensi</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -231,11 +231,11 @@ $csrf_hash = csrf_hash();
                   <tbody>
                     <tr> 
                       <th>IP Address</th> 
-                      <td><input type="text" class="form-control device_ip" name="device_ip" placeholder="Device IP" disabled></td> 
+                      <td><input type="text" class="form-control device_ip" name="device_ip" id="device_ip" placeholder="Device IP"></td> 
                     </tr>
                     <tr> 
                       <th>Device Name</th> 
-                      <td><input type="text" class="form-control device_name" name="device_name" placeholder="Device Name" disabled></td> 
+                      <td><input type="text" class="form-control device_name" name="device_name" id="device_name" placeholder="Device Name"></td> 
                     </tr>
                     <tr>
                       <th>Range Tanggal</th> 
@@ -321,17 +321,17 @@ $csrf_hash = csrf_hash();
                       .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                       .hide()
                       .fadeIn(4000, function () {
-                        $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Berhasil Download Log Presensi dari Mesin dalam bentuk Excel <br> Silahkan tunggu file hasil download log, kemudian Refresh halaman untuk download log lagi!</div>");
+                        $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Silahkan cek di folder public, kemudian Refresh halaman untuk download log lagi!</div>");
                       });
                 },
                 error: function (e) {
                     //$("#output").text("ERROR : " + e.responseText);
-                    //console.log("ERROR : ", e);
+                    console.log("ERROR : ", e);
                     $("#submit").prop("disabled", false);
                     $("#messageModal").html("<div id='message'></div>");
                     $("#message")
                       .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
-                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e+" </div></div>")
+                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
                       .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                 }
             });
@@ -371,32 +371,6 @@ $csrf_hash = csrf_hash();
 
         //Date range picker
         $('#datelog').daterangepicker()
-
-        $("form").validate();
-
-        $('#submit').click(function() {
-          var dataString = $(this).serialize();
-                    
-          $.ajax({
-            type: "POST",
-            url: base_url+"finger/get_log",
-            data: dataString,
-            success: function () {
-              $("#downloadform").html("<div id='message'></div>");
-              $("#message")
-                .html("<h2>Download Success!</h2>")
-                .append("<p>Log mesin berhasil di download dalam bentuk Excel.</p>")
-                .hide()
-                .fadeIn(1500, function () {
-                  $("#message").append(
-                    "<span class='badge badge-success'><i class='fa fa-circle-check'></i></a>"
-                  );
-                });
-            }
-          });
-          e.preventDefault();
-        });
-
     });
   </script>
   <!-- Bootstrap 4 -->

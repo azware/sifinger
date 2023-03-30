@@ -53,3 +53,304 @@ INFO - 2023-03-30 02:11:02 --> CSRF token verified.
 INFO - 2023-03-30 02:11:26 --> CSRF token verified.
 INFO - 2023-03-30 02:11:54 --> CSRF token verified.
 INFO - 2023-03-30 02:12:50 --> CSRF token verified.
+INFO - 2023-03-30 02:31:26 --> CSRF token verified.
+INFO - 2023-03-30 02:36:57 --> CSRF token verified.
+INFO - 2023-03-30 03:10:17 --> CSRF token verified.
+INFO - 2023-03-30 03:54:43 --> CSRF token verified.
+CRITICAL - 2023-03-30 03:54:43 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 03:55:52 --> CSRF token verified.
+CRITICAL - 2023-03-30 03:55:52 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 03:57:37 --> CSRF token verified.
+CRITICAL - 2023-03-30 03:57:37 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 03:58:22 --> CSRF token verified.
+CRITICAL - 2023-03-30 03:58:22 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:01:22 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:01:22 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:02:17 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:02:17 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:02:54 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:02:54 --> Undefined array key "device_ip"
+in APPPATH\Controllers\Finger.php on line 55.
+ 1 APPPATH\Controllers\Finger.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "device_ip"', 'APPPATH\\Controllers\\Finger.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:04:22 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:04:22 --> Undefined variable $conv
+in APPPATH\Controllers\Finger.php on line 89.
+ 1 APPPATH\Controllers\Finger.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $conv', 'APPPATH\\Controllers\\Finger.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:05:48 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:05:49 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 90.
+ 1 APPPATH\Controllers\Finger.php(90): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:05:49 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(90): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:07:09 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:07:09 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 90.
+ 1 APPPATH\Controllers\Finger.php(90): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:07:09 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(90): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:12:08 --> CSRF token verified.
+INFO - 2023-03-30 04:12:26 --> CSRF token verified.
+INFO - 2023-03-30 04:12:43 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:12:43 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 90.
+ 1 APPPATH\Controllers\Finger.php(90): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:12:43 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(90): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:19:56 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:19:56 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 101.
+ 1 APPPATH\Controllers\Finger.php(101): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:19:56 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(101): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:28:49 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:28:49 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 92.
+ 1 APPPATH\Controllers\Finger.php(92): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:28:49 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(92): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:30:39 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:30:40 --> Undefined variable $file
+in APPPATH\Controllers\Finger.php on line 96.
+ 1 APPPATH\Controllers\Finger.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $file', 'APPPATH\\Controllers\\Finger.php', 96)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:38:00 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:38:00 --> Undefined array key "Row"
+in APPPATH\Controllers\Finger.php on line 93.
+ 1 APPPATH\Controllers\Finger.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Row"', 'APPPATH\\Controllers\\Finger.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:41:45 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:41:46 --> Undefined array key "Row"
+in APPPATH\Controllers\Finger.php on line 93.
+ 1 APPPATH\Controllers\Finger.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Row"', 'APPPATH\\Controllers\\Finger.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:42:25 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:42:25 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 94.
+ 1 APPPATH\Controllers\Finger.php(94): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:42:25 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(94): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 04:46:15 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:46:16 --> Invalid range key start_date
+in ROOTPATH\soap\lib\TADResponse.php on line 425.
+ 1 [internal function]: TADPHP\TADResponse->TADPHP\{closure}('start_date', 0)
+ 2 ROOTPATH\soap\lib\TADResponse.php(421): array_walk([...], Object(Closure))
+ 3 ROOTPATH\soap\lib\TADResponse.php(240): TADPHP\TADResponse->normalize_filter_args([...])
+ 4 APPPATH\Controllers\Finger.php(83): TADPHP\TADResponse->__call('filter_by_date', [])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-30 04:47:56 --> CSRF token verified.
+CRITICAL - 2023-03-30 04:47:56 --> fputcsv(): Argument #2 ($fields) must be of type array, string given
+in APPPATH\Controllers\Finger.php on line 94.
+ 1 APPPATH\Controllers\Finger.php(94): fputcsv(resource (stream), '9999999')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-30 04:47:56 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(TypeError))
+#5 {main}
+  thrown
+【Previous Exception】
+TypeError
+fputcsv(): Argument #2 ($fields) must be of type array, string given
+#0 E:\Azzam\xampp\htdocs\sisdm\app\Controllers\Finger.php(94): fputcsv(Resource id #176, '9999999')
+#1 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+#2 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+#3 E:\Azzam\xampp\htdocs\sisdm\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 E:\Azzam\xampp\htdocs\sisdm\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#5 {main}
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-03-30 05:43:48 --> CSRF token verified.
