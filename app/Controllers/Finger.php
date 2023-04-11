@@ -88,7 +88,7 @@ class Finger extends BaseController
                 $data_logs = $logs->to_json();
                 $row_logs = json_decode($data_logs,true);
                 $fp = fopen('download_log_mesin_'.$device_name.'__start_'.$date_start_ready.'__end_'.$date_end_ready.'__'.$date_now.'.csv', 'w');
-                $header = array("ID","Date"); 
+                $header = array("pin","scan_date","verify_mode","io_mode","work_code");
                 fputcsv($fp, $header);
                 foreach ($row_logs['Row'] as $fields) {
                     fputcsv($fp, $fields);
