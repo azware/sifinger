@@ -77,9 +77,9 @@ class Finger extends BaseController
         $date_start_ready = date('Y-m-d',$date_start);
         $date_end_ready = date('Y-m-d',$date_end);
 
-        if (!EMPTY($devices)) {
+        if (!EMPTY($devices)) { // Cek apakah ada device dengan ip ini di database
             $tad = (new TADFactory((['ip'=> $device_ip, 'com_key'=>0])))->get_instance();
-            if (!EMPTY($tad)) {
+            if (!EMPTY($tad)) { // Cek apakah data di device sesuai dengan filter
                 $logs = $tad->get_att_log()->filter_by_date(
                             ['start' => $date_start_ready,'end' => $date_end_ready]
                         );
