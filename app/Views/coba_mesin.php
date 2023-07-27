@@ -12,7 +12,7 @@ $csrf_hash = csrf_hash();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistem Informasi SDM | Dashboard</title>
+  <title>Sistem Fingerprint | Dashboard</title>
 
   <link rel="shortcut icon" href="assets/images/ugm/favicon.ico" />
 
@@ -69,7 +69,7 @@ $csrf_hash = csrf_hash();
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="assets/images/ugm/ugm.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">SI SDM</span>
+      <span class="brand-text font-weight-light">SI FINGER</span>
     </a>
 
     <!-- Sidebar -->
@@ -197,15 +197,15 @@ $csrf_hash = csrf_hash();
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-edit btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
+                            echo "<a class='btn btn-downlog btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
 
                             ?>
                         </td>
                         <td> <?php
-                          echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='Upload User'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; ?>
+                          echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='Upload User'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; ?>
                         </td>
                         <td> <?php
-                          echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='Upload Fingerprint'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; ?>
+                          echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#upFingerModal' data-ip='$dev_ip' data-name='Upload Fingerprint'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; ?>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -271,7 +271,85 @@ $csrf_hash = csrf_hash();
         </div>
         <!-- /.modal -->
       </form>
-      
+
+      <form method="POST" enctype="multipart/form-data" id="upUserForm">
+        <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
+        <div class="modal fade" id="upUserModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="messageModal">
+              <div class="modal-header">
+                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Upload User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <tbody>
+                    <tr> 
+                      <th>Pilih File</th> 
+                      <td>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file_upuser">
+                          <label class="custom-file-label" for="file_upuser" name="file_upuser">Pilih File User Fingerprint</label>
+                        </div>
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+              </div>
+              <span id="output"></span>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+      </form>
+
+      <form method="POST" enctype="multipart/form-data" id="upFingerForm">
+        <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
+        <div class="modal fade" id="upFingerModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="messageModal">
+              <div class="modal-header">
+                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Upload Fingerprint</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <tbody>
+                    <tr> 
+                      <th>Pilih File</th> 
+                      <td>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file_upfinger">
+                          <label class="custom-file-label" for="file_upfinger" name="file_upfinger">Pilih File Fingerprint</label>
+                        </div>
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+              </div>
+              <span id="output"></span>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+      </form>
+
       <div class="alert alert-warning">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <h5><i class="icon fas fa-xmark"></i> Download Gagal | Mesin : <b>Presensi - LOBBY</b></h5> Mohon Refresh Halaman ! <br> ERROR : <br>
@@ -382,8 +460,8 @@ $csrf_hash = csrf_hash();
   <script>
     $(document).ready(function(){
  
-        // get Edit Product
-        $('.btn-edit').on('click',function(){
+        // get Download Log
+        $('.btn-downlog').on('click',function(){
             // get data from button edit
             const ip = $(this).data('ip');
             const name = $(this).data('name');
@@ -394,6 +472,18 @@ $csrf_hash = csrf_hash();
             $('#downloadModal').modal('show');
         });
  
+        // get Upload User
+        $('.btn-upuser').on('click',function(){
+            // Call Modal Edit
+            $('#upUserModal').modal('show');
+        });
+
+        // get Upload Fingerprint
+        $('.btn-upfing').on('click',function(){
+            // Call Modal Edit
+            $('#upFingerModal').modal('show');
+        });
+
         // get Delete Product
         $('.btn-delete').on('click',function(){
             // get data from button edit
