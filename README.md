@@ -1,5 +1,5 @@
-# sisdm
-Sistem Informasi SDM 
+# sifinger
+Sistem Fingerprint
 
 Berbasis Codeigniter 4 dengan Admin LTE
 
