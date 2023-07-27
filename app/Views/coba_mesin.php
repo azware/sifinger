@@ -138,6 +138,7 @@ $csrf_hash = csrf_hash();
 
     <!-- Main content -->
     <section class="content">
+
       <div class="container-fluid">
         <!-- Main row -->
         <div class="row">
@@ -171,6 +172,8 @@ $csrf_hash = csrf_hash();
                       <th>SN</th>
                       <th>Status Mesin</th>
                       <th>Download Log</th>
+                      <th>Upload User</th>
+                      <th>Upload Fingerprint</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -190,17 +193,19 @@ $csrf_hash = csrf_hash();
                             } ?>
                         </td>
                         <td><?php 
-                            if (!EMPTY($tad)) {
-                              $down_class = "bg-primary"; $href = "#";
-                            } else {
-                              $down_class = "bg-info disabled"; $href = "#";
-                            }
+                            if (!EMPTY($tad)) $down_class = "bg-primary"; else $down_class = "bg-primary disabled";
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-edit btn-xs $down_class' href='$href' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
+                            echo "<a class='btn btn-edit btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
 
                             ?>
+                        </td>
+                        <td> <?php
+                          echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='Upload User'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; ?>
+                        </td>
+                        <td> <?php
+                          echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='Upload Fingerprint'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; ?>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -267,6 +272,36 @@ $csrf_hash = csrf_hash();
         <!-- /.modal -->
       </form>
       
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fas fa-xmark"></i> Download Gagal | Mesin : <b>Presensi - LOBBY</b></h5> Mohon Refresh Halaman ! <br> ERROR : <br>
+        <b>Fatal error</b>:  Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php:41
+        Stack trace:
+        #0 E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+        #1 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(346): CodeIgniter\Format\JSONFormatter-&gt;format(Array)
+        #2 E:\Azzam\xampp\htdocs\sisdm\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions-&gt;format(Array)
+        #3 E:\Azzam\xampp\htdocs\sisdm\system\Debug\Exceptions.php(145): CodeIgniter\Debug\Exceptions-&gt;respond(Array, 500)
+        #4 [internal function]: CodeIgniter\Debug\Exceptions-&gt;exceptionHandler(Object(TypeError))
+        #5 {main}
+          thrown in <b>E:\Azzam\xampp\htdocs\sisdm\system\Format\JSONFormatter.php</b> on line <b>41</b><br>
+        {
+            "title": "ErrorException",
+            "type": "ErrorException",
+            "code": 500,
+            "message": "Uncaught CodeIgniter\\Format\\Exceptions\\FormatException: Failed to parse JSON string. Error: Type is not supported in E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\Format\\JSONFormatter.php:41\nStack trace:\n#0 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\Format\\JSONFormatter.php(41): CodeIgniter\\Format\\Exceptions\\FormatException::forInvalidJSON('Type is not sup...')\n#1 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\API\\ResponseTrait.php(346): CodeIgniter\\Format\\JSONFormatter-&gt;format(Array)\n#2 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\API\\ResponseTrait.php(99): CodeIgniter\\Debug\\Exceptions-&gt;format(Array)\n#3 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\Debug\\Exceptions.php(145): CodeIgniter\\Debug\\Exceptions-&gt;respond(Array, 500)\n#4 [internal function]: CodeIgniter\\Debug\\Exceptions-&gt;exceptionHandler(Object(TypeError))\n#5 {main}\n  thrown\n【Previous Exception】\nTypeError\nfputcsv(): Argument #2 ($fields) must be of type array, string given\n#0 E:\\Azzam\\xampp\\htdocs\\sisdm\\app\\Controllers\\Finger.php(94): fputcsv(Resource id #176, '11703')\n#1 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\CodeIgniter.php(934): App\\Controllers\\Finger-&gt;get_log()\n#2 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\CodeIgniter.php(499): CodeIgniter\\CodeIgniter-&gt;runController(Object(App\\Controllers\\Finger))\n#3 E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\CodeIgniter.php(368): CodeIgniter\\CodeIgniter-&gt;handleRequest(NULL, Object(Config\\Cache), false)\n#4 E:\\Azzam\\xampp\\htdocs\\sisdm\\public\\index.php(67): CodeIgniter\\CodeIgniter-&gt;run()\n#5 {main}",
+            "file": "E:\\Azzam\\xampp\\htdocs\\sisdm\\system\\Format\\JSONFormatter.php",
+            "line": 41,
+            "trace": [
+                {
+                    "function": "shutdownHandler",
+                    "class": "CodeIgniter\\Debug\\Exceptions",
+                    "type": "-&gt;",
+                    "args": []
+                }
+            ]
+        } 
+      </div>
+
     </section>
     <!-- /.content -->
   </div>
