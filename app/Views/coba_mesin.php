@@ -197,15 +197,22 @@ $csrf_hash = csrf_hash();
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-downlog btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>";
-
+                            echo "<a class='btn btn-downlog btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>"; 
                             ?>
                         </td>
-                        <td> <?php
-                          echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='Upload User'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; ?>
+                        <td><?php
+                            $dev_ip = $device['ip_address'];
+                            $dev_nm = $device['device_name'];
+
+                            echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; 
+                            ?>
                         </td>
-                        <td> <?php
-                          echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#upFingerModal' data-ip='$dev_ip' data-name='Upload Fingerprint'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; ?>
+                        <td><?php
+                            $dev_ip = $device['ip_address'];
+                            $dev_nm = $device['device_name'];
+
+                            echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; 
+                            ?>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -287,6 +294,14 @@ $csrf_hash = csrf_hash();
                 <table class="table table-hover text-nowrap">
                   <tbody>
                     <tr> 
+                      <th>IP Address</th> 
+                      <td><input type="text" class="form-control device_ip" name="device_ip" id="device_ip" placeholder="Device IP"></td> 
+                    </tr>
+                    <tr> 
+                      <th>Device Name</th> 
+                      <td><input type="text" class="form-control device_name" name="device_name" id="device_name" placeholder="Device Name"></td> 
+                    </tr>
+                    <tr> 
                       <th>Pilih File</th> 
                       <td>
                         <div class="custom-file">
@@ -325,6 +340,14 @@ $csrf_hash = csrf_hash();
               <div class="modal-body card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                   <tbody>
+                    <tr> 
+                      <th>IP Address</th> 
+                      <td><input type="text" class="form-control device_ip" name="device_ip" id="device_ip" placeholder="Device IP"></td> 
+                    </tr>
+                    <tr> 
+                      <th>Device Name</th> 
+                      <td><input type="text" class="form-control device_name" name="device_name" id="device_name" placeholder="Device Name"></td> 
+                    </tr>
                     <tr> 
                       <th>Pilih File</th> 
                       <td>
@@ -457,30 +480,47 @@ $csrf_hash = csrf_hash();
   <!-- jQuery UI 1.11.4 -->
   <script src="adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <!-- Bootstrap 4 -->
+  <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- bs-custom-file-input -->
+  <script src="adminlte/plugins/bs-custom-file-input/bs-custom-file-input.js"></script>
+
   <script>
     $(document).ready(function(){
  
         // get Download Log
         $('.btn-downlog').on('click',function(){
-            // get data from button edit
+            // get data from button
             const ip = $(this).data('ip');
             const name = $(this).data('name');
-            // Set data to Form Edit
+            // Set data to Form
             $('.device_ip').val(ip);
             $('.device_name').val(name);
-            // Call Modal Edit
+            // Call Modal
             $('#downloadModal').modal('show');
         });
  
         // get Upload User
         $('.btn-upuser').on('click',function(){
-            // Call Modal Edit
+            // get data from button
+            const ip = $(this).data('ip');
+            const name = $(this).data('name');
+            // Set data to Form
+            $('.device_ip').val(ip);
+            $('.device_name').val(name);
+            // Call Modal
             $('#upUserModal').modal('show');
         });
 
         // get Upload Fingerprint
         $('.btn-upfing').on('click',function(){
-            // Call Modal Edit
+            // get data from button
+            const ip = $(this).data('ip');
+            const name = $(this).data('name');
+            // Set data to Form
+            $('.device_ip').val(ip);
+            $('.device_name').val(name);
+            // Call Modal
             $('#upFingerModal').modal('show');
         });
 
@@ -495,11 +535,12 @@ $csrf_hash = csrf_hash();
         });
 
         //Date range picker
-        $('#datelog').daterangepicker()
+        $('#datelog').daterangepicker();
+        //File Input Custom
+        bsCustomFileInput.init();
     });
+
   </script>
-  <!-- Bootstrap 4 -->
-  <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- ChartJS -->
   <script src="adminlte/plugins/chart.js/Chart.min.js"></script>
   <!-- Sparkline -->
