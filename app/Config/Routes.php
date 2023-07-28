@@ -35,6 +35,8 @@ $routes->get('/finger', 'Finger::index');
 $routes->get('/finger/get_mesin', 'Finger::get_mesin/$1');
 $routes->get('/finger/get_log', 'Finger::get_log');
 $routes->post('/finger/get_log', 'Finger::get_log');
+$routes->get('/finger/get_finger', 'Finger::get_finger');
+$routes->post('/finger/get_finger', 'Finger::get_finger');
 
 /*
  * --------------------------------------------------------------------

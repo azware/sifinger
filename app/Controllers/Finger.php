@@ -111,4 +111,50 @@ class Finger extends BaseController
         echo json_encode($data);
 
     }
+
+    public function get_finger()
+    { 
+        $device_ip = $_POST['device_ip'];
+        $device_name = $_POST['device_name'];
+
+        $data['csrf_token'] = csrf_token();
+        $data['csrf_hash'] = csrf_hash();
+        $data['device_ip'] = $device_ip;
+        $date_now = date("Y_m_d__H_i_s");
+        $error = "";
+
+        $device = new FingerDeviceModel();
+
+        $devices = $device->where('ip_address', $device_ip)->findAll();
+
+        if (!EMPTY($devices)) { // Cek apakah ada device dengan ip ini di database
+            $tad = (new TADFactory((['ip'=> $device_ip, 'com_key'=>0])))->get_instance();
+            if (!EMPTY($tad)) { // Cek apakah data di device sesuai dengan filter
+                $fingers = $tad->get_user_template(['pin'=>16829]);
+
+                $data_fingers = $fingers->to_json();
+                $row_fingers = json_decode($data_fingers,true);
+                $fin = fopen('download_finger_mesin_'.$device_name.'__'.$date_now.'.csv', 'w');
+                $header = array("pin","finger_idx","","","template1");
+                fputcsv($fin, $header);
+                foreach ($row_fingers['Row'] as $fields) {
+                    fputcsv($fin, $row_fingers);
+                }
+
+                fclose($fin); 
+                exit; 
+            } else $error = 1;
+        } else $error = 1;
+
+        if ($error==1) {
+            die(json_encode([
+                'status' => false,
+                'response' => "Data Fingerprint tidak di temukan di Mesin !",
+                'data' => $data
+            ])); 
+        }
+
+        //echo $date_start_ready." Sampai ".$date_end_ready;
+        echo json_encode($data);
+    }
 }

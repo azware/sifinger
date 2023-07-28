@@ -171,6 +171,7 @@ $csrf_hash = csrf_hash();
                       <th>Device Name</th>
                       <th>SN</th>
                       <th>Status Mesin</th>
+                      <th>Download Fingerprint</th>
                       <th>Download Log</th>
                       <th>Upload User</th>
                       <th>Upload Fingerprint</th>
@@ -192,25 +193,24 @@ $csrf_hash = csrf_hash();
                               echo "<a class='btn btn-xs btn-info disabled' href='#'><i class='fa fa-circle-xmark'></i>&nbsp; Disconnected</a>";
                             } ?>
                         </td>
-                        <td><?php 
-                            if (!EMPTY($tad)) $down_class = "bg-primary"; else $down_class = "bg-primary disabled";
+                        <td><?php
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
+
+                            echo "<a class='btn btn-downfin btn-xs bg-purple' href='#' data-target='#downFinModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-users'></i>&nbsp; Download Fingerprint</a>"; 
+                            ?>
+                        </td>
+                        <td><?php 
+                            if (!EMPTY($tad)) $down_class = "bg-primary"; else $down_class = "bg-primary disabled";
 
                             echo "<a class='btn btn-downlog btn-xs $down_class' href='#' data-target='#downloadModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-angles-down'></i>&nbsp; Download csv</a>"; 
                             ?>
                         </td>
                         <td><?php
-                            $dev_ip = $device['ip_address'];
-                            $dev_nm = $device['device_name'];
-
                             echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; 
                             ?>
                         </td>
                         <td><?php
-                            $dev_ip = $device['ip_address'];
-                            $dev_nm = $device['device_name'];
-
                             echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; 
                             ?>
                         </td>
@@ -227,13 +227,54 @@ $csrf_hash = csrf_hash();
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
 
+      <form method="POST" enctype="multipart/form-data" id="downfinform">
+        <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
+        <div class="modal fade" id="downFinModal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="messageModal">
+              <div class="modal-header">
+                <h4 class="modal-title"><i class="fa fa-users"></i>&nbsp; Download User Mesin Presensi</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <tbody>
+                    <tr> 
+                      <th>IP Address</th> 
+                      <td><input type="text" class="form-control device_ip" name="device_ip" id="device_ip" placeholder="Device IP"></td> 
+                    </tr>
+                    <tr> 
+                      <th>Device Name</th> 
+                      <td><input type="text" class="form-control device_name" name="device_name" id="device_name" placeholder="Device Name"></td> 
+                    </tr>
+                    <tr>
+                      <th colspan="2">Apakah anda yakin akan Mendownload User dan Rekam Fingerprintnya dari mesin ini ?</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" name='submitdownus' id='submitdownus' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Ya, Download</button>
+              </div>
+              <span id="output"></span>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+      </form>
+
       <form method="POST" enctype="multipart/form-data" id="downloadform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
         <div class="modal fade" id="downloadModal">
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="messageModal">
               <div class="modal-header">
-                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Download Log Mesin Presensi</h4>
+                <h4 class="modal-title"><i class="fa fa-angles-down"></i>&nbsp; Download Log Mesin Presensi</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -268,7 +309,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Download</button>
+                <button type="button" name='submitdownlog' id='submitdownlog' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Download</button>
               </div>
               <span id="output"></span>
             </div>
@@ -279,13 +320,13 @@ $csrf_hash = csrf_hash();
         <!-- /.modal -->
       </form>
 
-      <form method="POST" enctype="multipart/form-data" id="upUserForm">
+      <form method="POST" enctype="multipart/form-data" id="upuserform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
         <div class="modal fade" id="upUserModal">
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="messageModal">
               <div class="modal-header">
-                <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Upload User</h4>
+                <h4 class="modal-title"><i class="fa fa-user"></i>&nbsp; Upload User</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -315,7 +356,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+                <button type="button" name='submit' id='submit' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
               </div>
               <span id="output"></span>
             </div>
@@ -326,7 +367,7 @@ $csrf_hash = csrf_hash();
         <!-- /.modal -->
       </form>
 
-      <form method="POST" enctype="multipart/form-data" id="upFingerForm">
+      <form method="POST" enctype="multipart/form-data" id="upfingerform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
         <div class="modal fade" id="upFingerModal">
           <div class="modal-dialog modal-lg">
@@ -362,7 +403,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submit' id='submit' class="btn btn-sm btn-primary"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+                <button type="button" name='submit' id='submit' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
               </div>
               <span id="output"></span>
             </div>
@@ -424,54 +465,102 @@ $csrf_hash = csrf_hash();
 <!-- ./wrapper -->
 <script>
   $(document).ready(function(){  
-      $("#submit").click(function (event) {
-            //stop submit the form, we will post it manually.
-            event.preventDefault();
-       
-            var form = $('#downloadform')[0]; // Get form            
-            var data = new FormData(form); // FormData object
-     
-            // If you want to add an extra field for the FormData
-            data.append("CustomField", "This is some extra data, testing");
-            
-            // disabled the submit button
-            $("#submit").prop("disabled", true);
+    $("#submitdownus").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+   
+        var form = $('#downfinform')[0]; // Get form            
+        var data = new FormData(form); // FormData object
+ 
+        // If you want to add an extra field for the FormData
+        data.append("CustomField", "This is some extra data, testing");
+        
+        // disabled the submit button
+        $("#submitdownus").prop("disabled", true);
 
-            $.ajax({
-                type: "POST",
-                enctype: 'multipart/form-data',
-                url: "<?= base_url()?>finger/get_log",
-                data : data,
-                processData: false,
-                contentType: false,
-                cache: false,
-                timeout: 800000,
-                success: function (data) {
-                    //$("#output").text("SUCCESS : " + data);
-                    //console.log("SUCCESS : ", data);
-                    $("#submit").prop("disabled", false);
-                    $("#messageModal").html("<div id='message'></div>");
-                    $("#message")
-                      .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
-                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
-                      .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
-                      .hide()
-                      .fadeIn(4000, function () {
-                        $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Silahkan cek di folder public, kemudian Refresh halaman untuk download log lagi!</div>");
-                      });
-                },
-                error: function (e) {
-                    //$("#output").text("ERROR : " + e.responseText);
-                    console.log("ERROR : ", e);
-                    $("#submit").prop("disabled", false);
-                    $("#messageModal").html("<div id='message'></div>");
-                    $("#message")
-                      .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
-                      .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
-                      .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
-                }
-            });
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "<?= base_url()?>finger/get_finger",
+            data : data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+                //$("#output").text("SUCCESS : " + data);
+                //console.log("SUCCESS : ", data);
+                $("#submitdownus").prop("disabled", false);
+                $("#messageModal").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-users'></i>&nbsp; Download Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                  .hide()
+                  .fadeIn(4000, function () {
+                    $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Silahkan cek di folder public, kemudian Refresh halaman untuk download User lagi!</div>");
+                  });
+            },
+            error: function (e) {
+                //$("#output").text("ERROR : " + e.responseText);
+                console.log("ERROR : ", e);
+                $("#submitdownus").prop("disabled", false);
+                $("#messageModal").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-users'></i>&nbsp; Download Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+            }
         });
+      });
+    $("#submitdownlog").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+   
+        var form = $('#downloadform')[0]; // Get form            
+        var data = new FormData(form); // FormData object
+ 
+        // If you want to add an extra field for the FormData
+        data.append("CustomField", "This is some extra data, testing");
+        
+        // disabled the submit button
+        $("#submitdownlog").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "<?= base_url()?>finger/get_log",
+            data : data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+                //$("#output").text("SUCCESS : " + data);
+                //console.log("SUCCESS : ", data);
+                $("#submitdownlog").prop("disabled", false);
+                $("#messageModal").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                  .hide()
+                  .fadeIn(4000, function () {
+                    $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Download Sukses</h5> Silahkan cek di folder public, kemudian Refresh halaman untuk download log lagi!</div>");
+                  });
+            },
+            error: function (e) {
+                //$("#output").text("ERROR : " + e.responseText);
+                console.log("ERROR : ", e);
+                $("#submitdownlog").prop("disabled", false);
+                $("#messageModal").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+            }
+        });
+      });
   });
 </script>
 <!-- ADMIN LTE 3 -->
@@ -488,6 +577,18 @@ $csrf_hash = csrf_hash();
   <script>
     $(document).ready(function(){
  
+        // get Download Log
+        $('.btn-downfin').on('click',function(){
+            // get data from button
+            const ip = $(this).data('ip');
+            const name = $(this).data('name');
+            // Set data to Form
+            $('.device_ip').val(ip);
+            $('.device_name').val(name);
+            // Call Modal
+            $('#downFinModal').modal('show');
+        });
+
         // get Download Log
         $('.btn-downlog').on('click',function(){
             // get data from button
