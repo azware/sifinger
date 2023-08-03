@@ -197,7 +197,7 @@ $csrf_hash = csrf_hash();
                             $dev_ip = $device['ip_address'];
                             $dev_nm = $device['device_name'];
 
-                            echo "<a class='btn btn-downfin btn-xs bg-purple' href='#' data-target='#downFinModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-users'></i>&nbsp; Download Fingerprint</a>"; 
+                            echo "<a class='btn btn-downfin btn-xs bg-purple' href='#' data-target='#downfinModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-users'></i>&nbsp; Download Fingerprint</a>"; 
                             ?>
                         </td>
                         <td><?php 
@@ -229,9 +229,9 @@ $csrf_hash = csrf_hash();
 
       <form method="POST" enctype="multipart/form-data" id="downfinform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
-        <div class="modal fade" id="downFinModal">
+        <div class="modal fade" id="downfinModal">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="messageModal">
+            <div class="modal-content" id="messageModaldownfin">
               <div class="modal-header">
                 <h4 class="modal-title"><i class="fa fa-users"></i>&nbsp; Download User Mesin Presensi</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -257,7 +257,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submitdownus' id='submitdownus' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Ya, Download</button>
+                <button type="button" name='submitdownfin' id='submitdownfin' class="btn btn-sm btn-primary"><i class="fa fa-angles-down"></i>&nbsp; Ya, Download</button>
               </div>
               <span id="output"></span>
             </div>
@@ -272,7 +272,7 @@ $csrf_hash = csrf_hash();
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
         <div class="modal fade" id="downloadModal">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="messageModal">
+            <div class="modal-content" id="messageModaldownlog">
               <div class="modal-header">
                 <h4 class="modal-title"><i class="fa fa-angles-down"></i>&nbsp; Download Log Mesin Presensi</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -465,7 +465,7 @@ $csrf_hash = csrf_hash();
 <!-- ./wrapper -->
 <script>
   $(document).ready(function(){  
-    $("#submitdownus").click(function (event) {
+    $("#submitdownfin").click(function (event) {
         //stop submit the form, we will post it manually.
         event.preventDefault();
    
@@ -476,7 +476,7 @@ $csrf_hash = csrf_hash();
         data.append("CustomField", "This is some extra data, testing");
         
         // disabled the submit button
-        $("#submitdownus").prop("disabled", true);
+        $("#submitdownfin").prop("disabled", true);
 
         $.ajax({
             type: "POST",
@@ -490,8 +490,8 @@ $csrf_hash = csrf_hash();
             success: function (data) {
                 //$("#output").text("SUCCESS : " + data);
                 //console.log("SUCCESS : ", data);
-                $("#submitdownus").prop("disabled", false);
-                $("#messageModal").html("<div id='message'></div>");
+                $("#submitdownfin").prop("disabled", false);
+                $("#messageModaldownfin").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-users'></i>&nbsp; Download Progress</h4>")
                   .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
@@ -504,8 +504,8 @@ $csrf_hash = csrf_hash();
             error: function (e) {
                 //$("#output").text("ERROR : " + e.responseText);
                 console.log("ERROR : ", e);
-                $("#submitdownus").prop("disabled", false);
-                $("#messageModal").html("<div id='message'></div>");
+                $("#submitdownfin").prop("disabled", false);
+                $("#messageModaldownfin").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-users'></i>&nbsp; Download Progress</h4>")
                   .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
@@ -539,7 +539,7 @@ $csrf_hash = csrf_hash();
                 //$("#output").text("SUCCESS : " + data);
                 //console.log("SUCCESS : ", data);
                 $("#submitdownlog").prop("disabled", false);
-                $("#messageModal").html("<div id='message'></div>");
+                $("#messageModaldownlog").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
                   .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
@@ -553,7 +553,7 @@ $csrf_hash = csrf_hash();
                 //$("#output").text("ERROR : " + e.responseText);
                 console.log("ERROR : ", e);
                 $("#submitdownlog").prop("disabled", false);
-                $("#messageModal").html("<div id='message'></div>");
+                $("#messageModaldownlog").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
                   .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Download Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
@@ -586,7 +586,7 @@ $csrf_hash = csrf_hash();
             $('.device_ip').val(ip);
             $('.device_name').val(name);
             // Call Modal
-            $('#downFinModal').modal('show');
+            $('#downfinModal').modal('show');
         });
 
         // get Download Log
