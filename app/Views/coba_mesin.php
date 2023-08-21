@@ -207,11 +207,11 @@ $csrf_hash = csrf_hash();
                             ?>
                         </td>
                         <td><?php
-                            echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; 
+                            echo "<a class='btn btn-upuser btn-xs bg-info' href='#' data-target='#upuserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-user'></i>&nbsp; Upload User</a>"; 
                             ?>
                         </td>
                         <td><?php
-                            echo "<a class='btn btn-upfing btn-xs bg-navy' href='#' data-target='#upUserModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; 
+                            echo "<a class='btn btn-upfin btn-xs bg-navy' href='#' data-target='#upfinModal' data-ip='$dev_ip' data-name='$dev_nm'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint</a>"; 
                             ?>
                         </td>
                       </tr>
@@ -322,9 +322,9 @@ $csrf_hash = csrf_hash();
 
       <form method="POST" enctype="multipart/form-data" id="upuserform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
-        <div class="modal fade" id="upUserModal">
+        <div class="modal fade" id="upuserModal">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="messageModal">
+            <div class="modal-content" id="messageModalupuser">
               <div class="modal-header">
                 <h4 class="modal-title"><i class="fa fa-user"></i>&nbsp; Upload User</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -346,8 +346,8 @@ $csrf_hash = csrf_hash();
                       <th>Pilih File</th> 
                       <td>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="file_upuser">
-                          <label class="custom-file-label" for="file_upuser" name="file_upuser">Pilih File User Fingerprint</label>
+                          <input type="file" class="custom-file-input" id="file_upuser" name="file_upuser">
+                          <label class="custom-file-label" for="file_upuser">Pilih File User</label>
                         </div>
                       </td> 
                     </tr>
@@ -356,7 +356,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submit' id='submit' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+                <button type="button" name='submitupuser' id='submitupuser' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
               </div>
               <span id="output"></span>
             </div>
@@ -367,11 +367,11 @@ $csrf_hash = csrf_hash();
         <!-- /.modal -->
       </form>
 
-      <form method="POST" enctype="multipart/form-data" id="upfingerform">
+      <form method="POST" enctype="multipart/form-data" id="upfinform">
         <input type="hidden" name="<?= $csrf_token; ?>" value="<?= $csrf_hash; ?>" />
-        <div class="modal fade" id="upFingerModal">
+        <div class="modal fade" id="upfinModal">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="messageModal">
+            <div class="modal-content" id="messageModalupfin">
               <div class="modal-header">
                 <h4 class="modal-title"><i class="fa fa-fingerprint"></i>&nbsp; Upload Fingerprint</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -393,8 +393,8 @@ $csrf_hash = csrf_hash();
                       <th>Pilih File</th> 
                       <td>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="file_upfinger">
-                          <label class="custom-file-label" for="file_upfinger" name="file_upfinger">Pilih File Fingerprint</label>
+                          <input type="file" class="custom-file-input" id="file_upfin" name="file_upfin">
+                          <label class="custom-file-label" for="file_upfin">Pilih File Fingerprint</label>
                         </div>
                       </td> 
                     </tr>
@@ -403,7 +403,7 @@ $csrf_hash = csrf_hash();
               </div>
               <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button type="button" name='submit' id='submit' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
+                <button type="button" name='submitupfin' id='submitupfin' class="btn btn-sm btn-success"><i class="fa fa-angles-up"></i>&nbsp; Upload</button>
               </div>
               <span id="output"></span>
             </div>
@@ -561,6 +561,96 @@ $csrf_hash = csrf_hash();
             }
         });
       });
+    $("#submitupuser").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+   
+        var form = $('#upuserform')[0]; // Get form            
+        var data = new FormData(form); // FormData object
+        
+        // disabled the submit button
+        $("#submitupuser").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "<?= base_url()?>finger/set_user",
+            data : data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+                //$("#output").text("SUCCESS : " + data);
+                //console.log("SUCCESS : ", data);
+                $("#submitupuser").prop("disabled", false);
+                $("#messageModalupuser").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-user'></i>&nbsp; Upload User Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                  .hide()
+                  .fadeIn(4000, function () {
+                    $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Upload Sukses</h5> Silahkan cek di mesin fingerprint, kemudian Refresh halaman untuk upload user lagi!</div>");
+                  });
+            },
+            error: function (e) {
+                //$("#output").text("ERROR : " + e.responseText);
+                console.log("ERROR : ", e);
+                $("#submitupuser").prop("disabled", false);
+                $("#messageModalupuser").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-user'></i>&nbsp; Upload User Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Upload Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+            }
+        });
+      });
+    $("#submitupfin").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+   
+        var form = $('#upfinform')[0]; // Get form            
+        var data = new FormData(form); // FormData object
+        
+        // disabled the submit button
+        $("#submitupfin").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "<?= base_url()?>finger/set_finger",
+            data : data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 800000,
+            success: function (data) {
+                //$("#output").text("SUCCESS : " + data);
+                //console.log("SUCCESS : ", data);
+                $("#submitupfin").prop("disabled", false);
+                $("#messageModalupfin").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+                  .hide()
+                  .fadeIn(4000, function () {
+                    $("#msgsukses").html("<div class='alert alert-success alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-check'></i> Upload Sukses</h5> Silahkan cek di mesin fingerprint, kemudian Refresh halaman untuk upload fingerprint lagi!</div>");
+                  });
+            },
+            error: function (e) {
+                //$("#output").text("ERROR : " + e.responseText);
+                console.log("ERROR : ", e);
+                $("#submitupfin").prop("disabled", false);
+                $("#messageModalupfin").html("<div id='message'></div>");
+                $("#message")
+                  .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint Progress</h4>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-danger alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><i class='icon fas fa-xmark'></i> Upload Gagal</h5> Mohon Refresh Halaman ! <br> ERROR : "+e.responseText+" </div></div>")
+                  .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
+            }
+        });
+      });
   });
 </script>
 <!-- ADMIN LTE 3 -->
@@ -610,11 +700,11 @@ $csrf_hash = csrf_hash();
             $('.device_ip').val(ip);
             $('.device_name').val(name);
             // Call Modal
-            $('#upUserModal').modal('show');
+            $('#upuserModal').modal('show');
         });
 
         // get Upload Fingerprint
-        $('.btn-upfing').on('click',function(){
+        $('.btn-upfin').on('click',function(){
             // get data from button
             const ip = $(this).data('ip');
             const name = $(this).data('name');
@@ -622,7 +712,7 @@ $csrf_hash = csrf_hash();
             $('.device_ip').val(ip);
             $('.device_name').val(name);
             // Call Modal
-            $('#upFingerModal').modal('show');
+            $('#upfinModal').modal('show');
         });
 
         // get Delete Product

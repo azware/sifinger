@@ -1,0 +1,194 @@
+INFO - 2023-08-09 03:13:00 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:13:00 --> Undefined array key "datelog"
+in APPPATH\Controllers\Finger.php on line 59.
+ 1 APPPATH\Controllers\Finger.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "datelog"', 'APPPATH\\Controllers\\Finger.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:14:16 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:14:16 --> Undefined array key "datelog"
+in APPPATH\Controllers\Finger.php on line 59.
+ 1 APPPATH\Controllers\Finger.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "datelog"', 'APPPATH\\Controllers\\Finger.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:15:36 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:15:36 --> Undefined array key "datelog"
+in APPPATH\Controllers\Finger.php on line 59.
+ 1 APPPATH\Controllers\Finger.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "datelog"', 'APPPATH\\Controllers\\Finger.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:19:10 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:19:10 --> Undefined array key "datelog"
+in APPPATH\Controllers\Finger.php on line 59.
+ 1 APPPATH\Controllers\Finger.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "datelog"', 'APPPATH\\Controllers\\Finger.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:19:49 --> CSRF token verified.
+INFO - 2023-08-09 03:20:51 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:20:51 --> Undefined array key "file_upuser"
+in APPPATH\Controllers\Finger.php on line 190.
+ 1 APPPATH\Controllers\Finger.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "file_upuser"', 'APPPATH\\Controllers\\Finger.php', 190)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:35:34 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:35:34 --> Undefined array key "file_upuser"
+in APPPATH\Controllers\Finger.php on line 190.
+ 1 APPPATH\Controllers\Finger.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "file_upuser"', 'APPPATH\\Controllers\\Finger.php', 190)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:38:57 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:38:57 --> Undefined array key "file_upuser"
+in APPPATH\Controllers\Finger.php on line 190.
+ 1 APPPATH\Controllers\Finger.php(190): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "file_upuser"', 'APPPATH\\Controllers\\Finger.php', 190)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:40:05 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:40:05 --> Only variables should be passed by reference
+in APPPATH\Controllers\Finger.php on line 192.
+ 1 APPPATH\Controllers\Finger.php(192): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'APPPATH\\Controllers\\Finger.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:43:40 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:43:40 --> Only variables should be passed by reference
+in APPPATH\Controllers\Finger.php on line 192.
+ 1 APPPATH\Controllers\Finger.php(192): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'APPPATH\\Controllers\\Finger.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:50:19 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:50:20 --> Only variables should be passed by reference
+in APPPATH\Controllers\Finger.php on line 192.
+ 1 APPPATH\Controllers\Finger.php(192): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'APPPATH\\Controllers\\Finger.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:53:22 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:53:22 --> Only variables should be passed by reference
+in APPPATH\Controllers\Finger.php on line 192.
+ 1 APPPATH\Controllers\Finger.php(192): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'APPPATH\\Controllers\\Finger.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:54:30 --> CSRF token verified.
+CRITICAL - 2023-08-09 10:54:30 --> Only variables should be passed by reference
+in APPPATH\Controllers\Finger.php on line 192.
+ 1 APPPATH\Controllers\Finger.php(192): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'APPPATH\\Controllers\\Finger.php', 192)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 03:55:02 --> CSRF token verified.
+INFO - 2023-08-09 03:58:39 --> CSRF token verified.
+INFO - 2023-08-09 04:01:28 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:01:29 --> Undefined array key 1
+in APPPATH\Controllers\Finger.php on line 210.
+ 1 APPPATH\Controllers\Finger.php(210): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Controllers\\Finger.php', 210)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_user()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:02:10 --> CSRF token verified.
+INFO - 2023-08-09 04:16:40 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:16:41 --> String could not be parsed as XML
+in ROOTPATH\soap\lib\TADResponse.php on line 466.
+ 1 ROOTPATH\soap\lib\TADResponse.php(466): SimpleXMLElement->__construct('<SetUserTemplateResponse>')
+ 2 ROOTPATH\soap\lib\TADResponse.php(450): TADPHP\TADResponse->get_items_number('<SetUserTemplateResponse>')
+ 3 ROOTPATH\soap\lib\TADResponse.php(99): TADPHP\TADResponse->is_there_no_data('<SetUserTemplateResponse>')
+ 4 ROOTPATH\soap\lib\TADResponse.php(74): TADPHP\TADResponse->set_response('<SetUserTemplateResponse>')
+ 5 ROOTPATH\soap\lib\Providers\TADSoap.php(112): TADPHP\TADResponse->__construct('<SetUserTemplateResponse>', 'iso8859-1')
+ 6 ROOTPATH\soap\lib\TAD.php(297): TADPHP\Providers\TADSoap->execute_soap_command('set_user_template', [...], 'iso8859-1')
+ 7 ROOTPATH\soap\lib\TAD.php(276): TADPHP\TAD->execute_command_via_tad_soap('set_user_template', [...])
+ 8 APPPATH\Controllers\Finger.php(284): TADPHP\TAD->__call('set_user_template', [])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:18:35 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:18:37 --> connection error 10.67.62.200
+in ROOTPATH\soap\lib\TAD.php on line 408.
+ 1 ROOTPATH\soap\lib\TAD.php(271): TADPHP\TAD->check_for_connection()
+ 2 APPPATH\Controllers\Finger.php(284): TADPHP\TAD->__call('set_user_template', [])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:20:34 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:20:34 --> String could not be parsed as XML
+in ROOTPATH\soap\lib\TADResponse.php on line 466.
+ 1 ROOTPATH\soap\lib\TADResponse.php(466): SimpleXMLElement->__construct('<SetUserTemplateResponse>')
+ 2 ROOTPATH\soap\lib\TADResponse.php(450): TADPHP\TADResponse->get_items_number('<SetUserTemplateResponse>')
+ 3 ROOTPATH\soap\lib\TADResponse.php(99): TADPHP\TADResponse->is_there_no_data('<SetUserTemplateResponse>')
+ 4 ROOTPATH\soap\lib\TADResponse.php(74): TADPHP\TADResponse->set_response('<SetUserTemplateResponse>')
+ 5 ROOTPATH\soap\lib\Providers\TADSoap.php(112): TADPHP\TADResponse->__construct('<SetUserTemplateResponse>', 'iso8859-1')
+ 6 ROOTPATH\soap\lib\TAD.php(297): TADPHP\Providers\TADSoap->execute_soap_command('set_user_template', [...], 'iso8859-1')
+ 7 ROOTPATH\soap\lib\TAD.php(276): TADPHP\TAD->execute_command_via_tad_soap('set_user_template', [...])
+ 8 APPPATH\Controllers\Finger.php(284): TADPHP\TAD->__call('set_user_template', [])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:23:11 --> CSRF token verified.
+INFO - 2023-08-09 04:23:58 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:23:58 --> Undefined array key 1
+in APPPATH\Controllers\Finger.php on line 281.
+ 1 APPPATH\Controllers\Finger.php(281): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Controllers\\Finger.php', 281)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:25:26 --> CSRF token verified.
+INFO - 2023-08-09 04:30:03 --> CSRF token verified.
+INFO - 2023-08-09 04:32:24 --> CSRF token verified.
+INFO - 2023-08-09 04:42:00 --> CSRF token verified.
+INFO - 2023-08-09 04:42:13 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:42:13 --> Undefined array key 1
+in APPPATH\Controllers\Finger.php on line 284.
+ 1 APPPATH\Controllers\Finger.php(284): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Controllers\\Finger.php', 284)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 04:43:40 --> CSRF token verified.
+INFO - 2023-08-09 04:43:54 --> CSRF token verified.
+CRITICAL - 2023-08-09 11:43:55 --> Undefined array key 1
+in APPPATH\Controllers\Finger.php on line 281.
+ 1 APPPATH\Controllers\Finger.php(281): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Controllers\\Finger.php', 281)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-09 07:37:08 --> CSRF token verified.
+INFO - 2023-08-09 07:37:28 --> CSRF token verified.
+INFO - 2023-08-09 07:44:16 --> CSRF token verified.
+INFO - 2023-08-09 07:46:45 --> CSRF token verified.
+INFO - 2023-08-09 07:49:41 --> CSRF token verified.
+INFO - 2023-08-09 07:56:53 --> CSRF token verified.
+INFO - 2023-08-09 07:57:45 --> CSRF token verified.
+INFO - 2023-08-09 07:58:40 --> CSRF token verified.
+INFO - 2023-08-09 08:42:19 --> CSRF token verified.
+CRITICAL - 2023-08-09 15:42:19 --> Parámetro(s) desconocido(s): template1
+in ROOTPATH\soap\lib\TAD.php on line 442.
+ 1 ROOTPATH\soap\lib\TAD.php(273): TADPHP\TAD->check_for_unrecognized_args([...])
+ 2 APPPATH\Controllers\Finger.php(272): TADPHP\TAD->__call('set_user_template', [])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

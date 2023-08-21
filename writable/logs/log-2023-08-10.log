@@ -1,0 +1,80 @@
+INFO - 2023-08-10 01:03:03 --> CSRF token verified.
+INFO - 2023-08-10 01:04:22 --> CSRF token verified.
+INFO - 2023-08-10 01:30:04 --> CSRF token verified.
+INFO - 2023-08-10 01:40:58 --> CSRF token verified.
+CRITICAL - 2023-08-10 08:40:59 --> Parámetro(s) desconocido(s): finger_idx
+in ROOTPATH\soap\lib\TAD.php on line 442.
+ 1 ROOTPATH\soap\lib\TAD.php(273): TADPHP\TAD->check_for_unrecognized_args([...])
+ 2 APPPATH\Controllers\Finger.php(270): TADPHP\TAD->__call('set_user_template', [])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 01:41:08 --> CSRF token verified.
+INFO - 2023-08-10 01:44:23 --> CSRF token verified.
+INFO - 2023-08-10 02:04:56 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:04:56 --> Class "App\Controllers\ZKLib" not found
+in APPPATH\Controllers\Finger.php on line 129.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_finger()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:06:24 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:06:24 --> Call to a member function getUser() on bool
+in APPPATH\Controllers\Finger.php on line 140.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_finger()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:18:02 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:18:02 --> Call to a member function getUser() on bool
+in APPPATH\Controllers\Finger.php on line 140.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_finger()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:23:35 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:23:35 --> Call to a member function setUserTemplate() on bool
+in APPPATH\Controllers\Finger.php on line 268.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:24:21 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:24:21 --> Class "App\Controllers\ZKLib" not found
+in APPPATH\Controllers\Finger.php on line 251.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:35:20 --> CSRF token verified.
+CRITICAL - 2023-08-10 09:35:20 --> Comando setUserTemplate no reconocido!
+in ROOTPATH\soap\lib\TAD.php on line 426.
+ 1 ROOTPATH\soap\lib\TAD.php(272): TADPHP\TAD->check_for_valid_command('setUserTemplate')
+ 2 APPPATH\Controllers\Finger.php(265): TADPHP\TAD->__call('setUserTemplate', [])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->set_finger()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 02:35:55 --> CSRF token verified.
+INFO - 2023-08-10 02:36:47 --> CSRF token verified.
+INFO - 2023-08-10 02:37:40 --> CSRF token verified.
+INFO - 2023-08-10 02:38:49 --> CSRF token verified.
+INFO - 2023-08-10 03:31:24 --> CSRF token verified.
+CRITICAL - 2023-08-10 10:31:24 --> Undefined array key "Row"
+in APPPATH\Controllers\Finger.php on line 143.
+ 1 APPPATH\Controllers\Finger.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Row"', 'APPPATH\\Controllers\\Finger.php', 143)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_finger()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 03:34:48 --> CSRF token verified.
+INFO - 2023-08-10 03:35:31 --> CSRF token verified.
+CRITICAL - 2023-08-10 10:35:31 --> Undefined array key "Row"
+in APPPATH\Controllers\Finger.php on line 141.
+ 1 APPPATH\Controllers\Finger.php(141): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Row"', 'APPPATH\\Controllers\\Finger.php', 141)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_finger()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-08-10 03:35:58 --> CSRF token verified.

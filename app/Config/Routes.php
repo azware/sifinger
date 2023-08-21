@@ -37,6 +37,10 @@ $routes->get('/finger/get_log', 'Finger::get_log');
 $routes->post('/finger/get_log', 'Finger::get_log');
 $routes->get('/finger/get_finger', 'Finger::get_finger');
 $routes->post('/finger/get_finger', 'Finger::get_finger');
+$routes->get('/finger/set_user', 'Finger::set_user');
+$routes->post('/finger/set_user', 'Finger::set_user');
+$routes->get('/finger/set_finger', 'Finger::set_finger');
+$routes->post('/finger/set_finger', 'Finger::set_finger');
 
 /*
  * --------------------------------------------------------------------
