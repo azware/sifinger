@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title><?= $title ?? 'RSA Universitas Gadjah Mada'; ?></title>
+    <title><?= $title ?? 'Unit Kerja'; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="csrf-token" content="<?= $this->security->get_csrf_hash(); ?>"/>
     <meta name="csrf-name" content="<?= $this->security->get_csrf_token_name(); ?>"/>
