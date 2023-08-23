@@ -14,7 +14,7 @@ $csrf_hash = csrf_hash();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistem Fingerprint | Dashboard</title>
 
-  <link rel="shortcut icon" href="assets/images/ugm/favicon.ico" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
   <!-- ADMIN LTE 3 -->
     <!-- Google Font: Source Sans Pro -->
@@ -47,7 +47,7 @@ $csrf_hash = csrf_hash();
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="assets/images/ugm/ugm-blok.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="assets/images/fingerprint_logo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -68,7 +68,7 @@ $csrf_hash = csrf_hash();
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="assets/images/ugm/ugm.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="assets/images/fingerprint_logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">SI FINGER</span>
     </a>
 
@@ -77,7 +77,7 @@ $csrf_hash = csrf_hash();
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="assets/images/ugm/user-icon.png" class="img-circle elevation-2" alt="User Image">
+          <img src="assets/images/user-icon.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Programmer</a>
@@ -494,7 +494,7 @@ $csrf_hash = csrf_hash();
                 $("#messageModaldownfin").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-users'></i>&nbsp; Download Progress</h4>")
-                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
                   .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                   .hide()
                   .fadeIn(4000, function () {
@@ -542,7 +542,7 @@ $csrf_hash = csrf_hash();
                 $("#messageModaldownlog").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-fingerprint'></i>&nbsp; Download Log Progress</h4>")
-                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/load-baru.gif'> <br>Loading Proses Download....</h5></div></div>")
                   .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                   .hide()
                   .fadeIn(4000, function () {
@@ -587,7 +587,7 @@ $csrf_hash = csrf_hash();
                 $("#messageModalupuser").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-user'></i>&nbsp; Upload User Progress</h4>")
-                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
                   .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                   .hide()
                   .fadeIn(4000, function () {
@@ -632,7 +632,7 @@ $csrf_hash = csrf_hash();
                 $("#messageModalupfin").html("<div id='message'></div>");
                 $("#message")
                   .html("<div class='modal-header'><h4 class='modal-title'><i class='fa fa-hand'></i>&nbsp; Upload Fingerprint Progress</h4>")
-                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/ugm/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
+                  .append("<div class='modal-body card-body' id='msgsukses'><div class='alert alert-info alert-dismissible'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><h5><img src='<?= base_url()?>assets/images/load-baru.gif'> <br>Loading Proses Upload....</h5></div></div>")
                   .append("<div class='modal-footer justify-content-between'><button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button></div>")
                   .hide()
                   .fadeIn(4000, function () {
