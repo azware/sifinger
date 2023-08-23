@@ -414,6 +414,7 @@ $csrf_hash = csrf_hash();
         <!-- /.modal -->
       </form>
 
+      <!-- ERROR SALAH SATU MESIN 
       <div class="alert alert-warning">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <h5><i class="icon fas fa-xmark"></i> Download Gagal | Mesin : <b>Presensi - LOBBY</b></h5> Mohon Refresh Halaman ! <br> ERROR : <br>
@@ -443,6 +444,7 @@ $csrf_hash = csrf_hash();
             ]
         } 
       </div>
+      -->
 
     </section>
     <!-- /.content -->
