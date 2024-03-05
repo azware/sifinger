@@ -1,0 +1,31 @@
+INFO - 2024-02-13 08:43:55 --> CSRF token verified.
+WARNING - 2024-02-13 15:43:56 --> [DEPRECATED] strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in ROOTPATH\soap\lib\TADResponse.php on line 367.
+ 1 ROOTPATH\soap\lib\TADResponse.php(367): strpos(null, '?>')
+ 2 ROOTPATH\soap\lib\TADResponse.php(67): TADPHP\TADResponse->extract_xml_header(null)
+ 3 ROOTPATH\soap\lib\Providers\TADSoap.php(112): TADPHP\TADResponse->__construct(null, 'iso8859-1')
+ 4 ROOTPATH\soap\lib\TAD.php(297): TADPHP\Providers\TADSoap->execute_soap_command('get_att_log', [...], 'iso8859-1')
+ 5 ROOTPATH\soap\lib\TAD.php(276): TADPHP\TAD->execute_command_via_tad_soap('get_att_log', [])
+ 6 APPPATH\Controllers\Finger.php(87): TADPHP\TAD->__call('get_att_log', [])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-13 15:43:56 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in ROOTPATH\soap\lib\TADResponse.php on line 405.
+ 1 ROOTPATH\soap\lib\TADResponse.php(405): str_replace([...], 'ROOTPATH\\public', null)
+ 2 ROOTPATH\soap\lib\TADResponse.php(374): TADPHP\TADResponse->sanitize_xml_string(null)
+ 3 ROOTPATH\soap\lib\TADResponse.php(67): TADPHP\TADResponse->extract_xml_header(null)
+ 4 ROOTPATH\soap\lib\Providers\TADSoap.php(112): TADPHP\TADResponse->__construct(null, 'iso8859-1')
+ 5 ROOTPATH\soap\lib\TAD.php(297): TADPHP\Providers\TADSoap->execute_soap_command('get_att_log', [...], 'iso8859-1')
+ 6 ROOTPATH\soap\lib\TAD.php(276): TADPHP\TAD->execute_command_via_tad_soap('get_att_log', [])
+ 7 APPPATH\Controllers\Finger.php(87): TADPHP\TAD->__call('get_att_log', [])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-13 15:43:56 --> Undefined array key "Row"
+in APPPATH\Controllers\Finger.php on line 96.
+ 1 APPPATH\Controllers\Finger.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "Row"', 'APPPATH\\Controllers\\Finger.php', 96)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Finger->get_log()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Finger))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
